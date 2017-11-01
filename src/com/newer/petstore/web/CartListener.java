@@ -24,7 +24,7 @@ public class CartListener implements HttpSessionListener {
 	 * @see HttpSessionListener#sessionCreated(HttpSessionEvent)
 	 */
 	public void sessionCreated(HttpSessionEvent se) {
-		// 创建会话的时候、创建一个购物车
+		// 鍒涘缓浼氳瘽鐨勬椂鍊欍�佸垱寤轰竴涓喘鐗╄溅
 		Cart cart = new Cart();
 		se.getSession().setAttribute("CART", cart);
 	}
@@ -33,7 +33,6 @@ public class CartListener implements HttpSessionListener {
 	 * @see HttpSessionListener#sessionDestroyed(HttpSessionEvent)
 	 */
 	public void sessionDestroyed(HttpSessionEvent se) {
-		// TODO Auto-generated method stub
 	}
 
 }

@@ -5,33 +5,34 @@ import java.util.HashMap;
 import java.util.Set;
 
 /**
- * 购物车
+ * 购物车 （强实体的弱实体）
  * 
-@ -7,5 +11,56 @@ package com.newer.petstore.domain;
+ * @author hzqhzqhzq
  *
  */
 public class Cart {
 	// 关系型数据库主键
-	private int id;
+//	private int id;
 
 	// 隶属账号
-	private Account account;
+//	private Account account;
 
 	// 商品、 数量、
 	HashMap<Product, Integer> map = new HashMap<Product, Integer>();
 
 	private BigDecimal total;
+
 	public Cart() {
 
 	}
 
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
+//	public Account getAccount() {
+//		return account;
+//	}
+//
+//	public void setAccount(Account account) {
+//		this.account = account;
+//	}
 
 	public HashMap<Product, Integer> getMap() {
 		return map;
@@ -41,25 +42,26 @@ public class Cart {
 		this.map = map;
 	}
 
-	public int getId() {
-		return id;
-	}
+//	public int getId() {
+//		return id;
+//	}
+//
+//	public void setId(int id) {
+//		this.id = id;
+//	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 	/**
 	 * 购物车总金额
+	 * 
 	 * @return total
 	 */
 	public BigDecimal getTotal() {
 		Set<Product> keys = map.keySet();
-		for(Product p: keys) {
-			int  n = map.get(p);
-			total = total.add(
-					p.getPrice().multiply(BigDecimal.valueOf(n)));
+		for (Product p : keys) {
+			int n = map.get(p);
+			total = total.add(p.getPrice().multiply(BigDecimal.valueOf(n)));
 		}
-		
+
 		return total;
 	}
 

@@ -18,7 +18,7 @@ public class Account {
 	 * @author hzqhzqhzq
 	 *
 	 */
-	public static class Adress {
+	public static class Address {
 		String province;
 		String city;
 		String street;
@@ -37,7 +37,7 @@ public class Account {
 	// 订单列表
 	private List<Order> orderList = new LinkedList<Order>();
 	// 地址
-	private Adress adress;
+	private List<Address> address =  new LinkedList<>();
 
 	public Account() {
 
@@ -82,12 +82,21 @@ public class Account {
 	public void setOrderList(List<Order> orderList) {
 		this.orderList = orderList;
 	}
+//
+//	public Address getAdress() {
+//		return address;
+//	}
+//
+//	public void setAdress(Address adress) {
+//		this.address = adress;
+//	}
 
-	public Adress getAdress() {
-		return adress;
+	public List<Address> getAddress() {
+		return address;
 	}
 
-	public void setAdress(Adress adress) {
-		this.adress = adress;
+	public void setAddress(List<Address> address) {
+		this.address = address;
 	}
+	
 }

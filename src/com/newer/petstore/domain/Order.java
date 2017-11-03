@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.newer.petstore.domain.Account.Adress;
+import com.newer.petstore.domain.Account.Address;
 
 /**
  * 订单
@@ -25,7 +25,7 @@ public class Order {
 	private Account account;
 	
 //	送货地址(如果为空，则使用账号的默认地址)
-	private Adress address;
+	private Address address;
 	
 //	订单项
 	private  List<Item> items = new ArrayList<Item>();
@@ -61,11 +61,11 @@ public class Order {
 		this.account = account;
 	}
 
-	public Adress getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(Adress address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 

@@ -43,6 +43,11 @@ public class Category {
 		productList.add(pro);
 	}
 
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", title=" + title + "]";
+	}
+
 	public int getId() {
 		return id;
 	}

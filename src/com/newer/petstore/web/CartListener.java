@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
+import com.newer.petstore.AppInfo;
 import com.newer.petstore.domain.Cart;
 
 /**
@@ -26,7 +27,7 @@ public class CartListener implements HttpSessionListener {
 	public void sessionCreated(HttpSessionEvent se) {
 		// 创建会话的时候、创建一个购物车
 		Cart cart = new Cart();
-		se.getSession().setAttribute("CART", cart);
+		se.getSession().setAttribute(AppInfo.SESSION_CART, cart);
 	}
 
 	/**

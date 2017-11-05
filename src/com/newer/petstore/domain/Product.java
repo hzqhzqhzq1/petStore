@@ -13,6 +13,12 @@ public class Product {
 	// 商品名称
 	private String title;
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", title=" + title + ", price=" + price + ", info=" + info + ", quantity="
+				+ quantity + ", sales=" + sales + ", pic=" + pic + "]";
+	}
+
 	// 价格
 	private BigDecimal price;
 
@@ -26,7 +32,7 @@ public class Product {
 	private int sales;
 
 	// 图片路径
-	private String picPath;
+	private String pic;
 
 	// 类别
 	private Category category;
@@ -74,12 +80,12 @@ public class Product {
 		this.sales = sales;
 	}
 
-	public String getPicPath() {
-		return picPath;
+	public String getPic() {
+		return pic;
 	}
 
-	public void setPicPath(String picPath) {
-		this.picPath = picPath;
+	public void setPic(String pic) {
+		this.pic = pic;
 	}
 
 	public Category getCategory() {

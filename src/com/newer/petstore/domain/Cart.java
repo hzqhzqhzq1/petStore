@@ -26,14 +26,9 @@ public class Cart {
 
 	}
 
-//	public Account getAccount() {
-//		return account;
-//	}
-//
-//	public void setAccount(Account account) {
-//		this.account = account;
-//	}
-
+	public int getSize() {
+		return map.size();
+	}
 	public HashMap<Product, Integer> getMap() {
 		return map;
 	}
@@ -41,14 +36,6 @@ public class Cart {
 	public void setMap(HashMap<Product, Integer> map) {
 		this.map = map;
 	}
-
-//	public int getId() {
-//		return id;
-//	}
-//
-//	public void setId(int id) {
-//		this.id = id;
-//	}
 
 	/**
 	 * 购物车总金额
@@ -66,7 +53,11 @@ public class Cart {
 	}
 
 	public void addCart(Product product) {
-		addCart(product,1);
+		if(map.containsKey(product)) {
+			addCart(product,1);
+		}else {
+			map.put(product, 1);
+		}
 	}
 	
 	public void addCart(Product product,int n) {

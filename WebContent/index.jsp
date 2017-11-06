@@ -11,13 +11,15 @@
 <title>Insert title here</title>
 <style type="text/css">
 	table{
-		border = 1px;
+		border: 1px solid black;
+		text-align: center;
+		
 	}
 </style>
 </head>
 <body>
 
-	<h1>在线人数：${ONLINE}<a href="Logout">注销</a></h1>
+	<h1>在线人数：${ONLINE} <a href="Logout">注销</a></h1>
 	<%-- 	<%
 		List<Category> list = (List<Category>)application.getAttribute(AppInfo.APP_CATEGORY_LIST);
 		for(Category c : list){
@@ -27,7 +29,7 @@
 		}
 	%> --%>
 	<div>
-	<table align="center">
+	<table align="center" border=1px cellspacing=0>
 		<tr>
 		<!--<th>编号</th> -->
 			<th>名称</th>

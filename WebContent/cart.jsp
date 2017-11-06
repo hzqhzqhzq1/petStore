@@ -12,7 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1 align="center">购物车</h1>
+	<h1>购物车 <a href="index.jsp">继续购物</a></h1>
 	<%
 		Cart cart = (Cart)session.getAttribute(AppInfo.SESSION_CART);
 		HashMap<Product,Integer> m = cart.getMap();	
@@ -22,8 +22,8 @@
 		<tr>
 			<th>名称</th>
 			<th>单价</th>
+			<th>图片</th>
 			<th>数量</th>
-			<th>其他</th>
 		</tr>
 		<%
 			for(Product p:products){
@@ -32,10 +32,12 @@
 		<tr>
 			<td><%=p.getTitle() %></td>
 			<td><%=p.getPrice() %></td>
+			<td><img alt="没有加载到图片"src="<%=p.getPic() %>"></td>
 			<td><%=m.get(p) %></td>
-			<td><img src = "<%=p.getPic() %>"></td>
 		</tr>
-		<%} %>
+		<%
+			}
+		%>
 	</table>
 
 </body>

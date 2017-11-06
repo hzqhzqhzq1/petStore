@@ -16,6 +16,8 @@
 </style>
 </head>
 <body>
+
+	<h1>在线人数：${ONLINE}<a href="Logout">注销</a></h1>
 	<%-- 	<%
 		List<Category> list = (List<Category>)application.getAttribute(AppInfo.APP_CATEGORY_LIST);
 		for(Category c : list){
@@ -25,9 +27,9 @@
 		}
 	%> --%>
 	<div>
-	<table>
+	<table align="center">
 		<tr>
-			<th>编号</th>
+		<!--<th>编号</th> -->
 			<th>名称</th>
 			<th>价格</th>
 			<th>信息</th>
@@ -39,13 +41,14 @@
 
 		<c:forEach items="${products}" var="p">
 			<tr>
-				<td>${p.id}</td>			
+				<%-- <td>${p.id}</td>	 --%>		
 				<td>${p.title}</td>			
 				<td>${p.price}</td>			
 				<td>${p.info}</td>			
 				<td>${p.quantity}</td>			
 				<td>${p.sales}</td>			
 				<td><img alt="source not found" src="${p.pic}" width="75%"></td>			
+				<td><a href="cart?id=${p.id}">加入购物车</a></td>
 			</tr>
 		</c:forEach>
 	</table>

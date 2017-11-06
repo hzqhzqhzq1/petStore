@@ -65,4 +65,11 @@ public class Cart {
 		return total;
 	}
 
+	public void addCart(Product product) {
+		addCart(product,1);
+	}
+	
+	public void addCart(Product product,int n) {
+		map.put(product, n+map.get(product));
+	}
 }

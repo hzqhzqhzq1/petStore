@@ -11,7 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+<link rel="stylesheet" type="text/css" href="CSS/master.css" />
 <body>
+	<%@ include file="header.jsp"%>
 	<h1>购物车 <a href="index.jsp">继续购物</a></h1>
 	<%
 		Cart cart = (Cart)session.getAttribute(AppInfo.SESSION_CART);
@@ -39,6 +41,8 @@
 			}
 		%>
 	</table>
-
+	<div><a href="account.jsp">结账</a></div>
+	<%@ include file="footer.jsp"%>
+	
 </body>
 </html>

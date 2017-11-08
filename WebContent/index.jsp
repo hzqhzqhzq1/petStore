@@ -8,18 +8,34 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	table{
-		border: 1px solid black;
-		text-align: center;
-		
-	}
-</style>
+
+
+<!--  <link rel="stylesheet" type="text/css" href="CSS/csstest.css" />
+ --> <title>Insert title here</title>
+ <link rel="stylesheet" type="text/css" href="CSS/master.css" />
+<script type="text/javascript" src="js/jquery-1.8.3.js" ></script>
+<script type="text/javascript">
+	$(function(){
+		$('#btnSearch').on('click',function(){
+			
+			$.get(
+				'search',
+				{keyWords:$('#key').val()},
+				function(data){
+					$('table').remove();
+					$('#r').text(data);
+					
+					//DOM
+					//todo list
+				});
+		});
+	});
+</script>
 </head>
 <body>
-
-	<h1>在线人数：${ONLINE} <a href="Logout">注销</a></h1>
+	<div>
+	<%@ include file="header.jsp"%>
+	<font>在线人数：${ONLINE} <a href="Logout">注销</a></font>
 	<%-- 	<%
 		List<Category> list = (List<Category>)application.getAttribute(AppInfo.APP_CATEGORY_LIST);
 		for(Category c : list){
@@ -28,32 +44,33 @@
 	<%
 		}
 	%> --%>
-	<div>
-	<table align="center" border=1px cellspacing=0>
-		<tr>
-		<!--<th>编号</th> -->
-			<th>名称</th>
-			<th>价格</th>
-			<th>信息</th>
-			<th>库存</th>
-			<th>销量</th>
-			<th>图片路径</th>
-			<th></th>
-		</tr>
-
-		<c:forEach items="${products}" var="p">
+		<div id="r"></div>
+		<table>
 			<tr>
-				<%-- <td>${p.id}</td>	 --%>		
-				<td>${p.title}</td>			
-				<td>${p.price}</td>			
-				<td>${p.info}</td>			
-				<td>${p.quantity}</td>			
-				<td>${p.sales}</td>			
-				<td><img alt="source not found" src="${p.pic}" width="75%"></td>			
-				<td><a href="cart?id=${p.id}">加入购物车</a></td>
+				<!--<th>编号</th> -->
+				<th>名称</th>
+				<th>价格</th>
+				<th>信息</th>
+				<th>库存</th>
+				<th>销量</th>
+				<th>图片路径</th>
+				<th></th>
 			</tr>
-		</c:forEach>
-	</table>
-</div>
+
+			<c:forEach items="${products}" var="p">
+				<tr>
+					<%-- <td>${p.id}</td>	 --%>
+					<td>${p.title}</td>
+					<td>${p.price}</td>
+					<td>${p.info}</td>
+					<td>${p.quantity}</td>
+					<td>${p.sales}</td>
+					<td><img alt="source not found" src="${p.pic}" width="75%"></td>
+					<td><a href="cart?id=${p.id}">加入购物车</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+		<%@ include file="footer.jsp"%>
+		</div>
 </body>
 </html>
